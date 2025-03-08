@@ -1,3 +1,4 @@
+// The endpoint used for getting completions. Must follow the OPENAI API's format
 export const API_ENDPOINT = "https://api.avalai.ir/"
 
 export const AI_MODEL = "gpt-4o-mini"
