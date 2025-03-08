@@ -1,0 +1,22 @@
+{
+  "name": "edge",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "rollup -c rollup.config.js",
+    "deploy": "r1ec deploy funfact --fileName=./dist/bundle.js"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^3.0.0",
+    "@rollup/plugin-commonjs": "^28.0.3",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "@rollup/plugin-replace": "^6.0.2",
+    "dotenv": "^16.4.7",
+    "rollup": "^3.26.3"
+  }
+}
