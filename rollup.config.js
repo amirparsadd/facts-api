@@ -3,8 +3,12 @@ import nodeResolve from "@rollup/plugin-node-resolve";
 import replace from "@rollup/plugin-replace";
 import dotenv from "dotenv";
 
-// Load environment variables from .env
-dotenv.config();
+try {
+	// Load environment variables from .env
+	dotenv.config();
+} catch (ignore) {
+	// Ignore it as we are probably in a workflow env
+}
 
 export default {
   input: "src/index.js",
