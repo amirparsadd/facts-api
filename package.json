@@ -12,6 +12,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@cloudflare/workers-types": "^4.20250303.0",
     "@rollup/plugin-commonjs": "^28.0.3",
     "@rollup/plugin-node-resolve": "^15.1.0",
     "@rollup/plugin-replace": "^6.0.2",

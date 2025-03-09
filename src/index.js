@@ -1,7 +1,13 @@
+import { FetchEvent } from "@cloudflare/workers-types";
 import { getRandomFact } from "./utils/fact";
 import { log } from "./utils/logger";
 
-addEventListener("fetch", (event) => {
+addEventListener("fetch", (_event) => {
+	/**
+	 * @type {FetchEvent}
+	 */
+	const event = _event
+
 	event.respondWith(handleRequest(event.request))
 });
 
