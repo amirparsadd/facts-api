@@ -1,10 +1,9 @@
-import { FetchEvent } from "@cloudflare/workers-types";
 import { getRandomFact } from "./utils/fact";
 import { log } from "./utils/logger";
 
 addEventListener("fetch", (_event) => {
 	/**
-	 * @type {FetchEvent}
+	 * @type {import("@cloudflare/workers-types").FetchEvent}
 	 */
 	const event = _event
 
