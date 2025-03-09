@@ -25,7 +25,7 @@ export async function getRandomFact(){
 					},
 					{
 						role: "user",
-						content: `A Fact About ${getRandomItem(topics)}`
+						content: `A fact about ${getRandomItem(topics)} in persian`
 					}
 				]
 			})
