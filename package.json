@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "devbuild": "rollup -c rollup.config.js",
-    "deploy": "npm run devbuild && r1ec deploy persianfacts --fileName=./dist/bundle.js"
+    "deploy": "npm run devbuild && r1ec deploy funfact --fileName=./dist/bundle.js"
   },
   "type": "module",
   "keywords": [],
