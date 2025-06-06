@@ -1,5 +1,5 @@
-import { getRandomFact } from "./utils/fact";
-import { log } from "./utils/logger";
+import main from "./handlers/main";
+import addCORSToResponse from "./utils/cors";
 
 addEventListener("fetch", (_event) => {
 	/**
@@ -13,27 +13,8 @@ addEventListener("fetch", (_event) => {
 /**
  * 
  * @param {Request} req 
- * @returns {Response}
+ * @returns {Promise<Response>}
  */
 async function handleRequest(req){
-	const corsHeaders = new Headers()
-	corsHeaders.append("Access-Control-Allow-Headers", "*")
-	corsHeaders.append("Access-Control-Allow-Origin", "*")
-	corsHeaders.append("Access-Control-Allow-Methods", "*")
-
-	if (req.method === "OPTIONS") {
-    return new Response("OK", {
-      headers: corsHeaders
-    });
-  }
-
-	try {
-		return new Response(await getRandomFact(), { headers: corsHeaders })
-	} catch (error) {
-		log("ERROR", "request-handler-exception", "An error occured while handling a request", {
-			error: JSON.stringify(error)
-		})
-
-		return new Response("An Error Occured!", { status: 500 }, { headers: corsHeaders })
-	}
+	return addCORSToResponse(await main(req))
 }
