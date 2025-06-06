@@ -1,1 +1,4 @@
 Add a workflow to automatically update the free api on each push to master
+Add support for other AI APIs (Google, Claude, Deepseek blahblahblah)
+Add middleware system
+Add tests
