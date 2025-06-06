@@ -1,4 +1,6 @@
+import topics from "../topics"
 import { getRandomFact } from "../utils/fact"
+import HandlerError from "../utils/handler"
 import { log } from "../utils/logger"
 
 /**
@@ -8,7 +10,19 @@ import { log } from "../utils/logger"
  * @returns {Promise<Response | null>}
  */
 export default async function handleFacts(req){
-    if(req.method !== "GET" || new URL(req.url).pathname !== "/") return null
+    const url = new URL(req.url)
 
-    return new Response(await getRandomFact())
+    if(req.method !== "GET" || url.pathname !== "/") return null
+
+    const selectedTopic = url.searchParams.get("topic") ?? undefined
+
+    if(!selectedTopic){
+        return new Response(await getRandomFact())
+    }
+
+    if(!topics.includes(selectedTopic)) {
+        throw new HandlerError(400, "Invalid Topic! Topics Are Case Sensitive")
+    }
+
+    return new Response(await getRandomFact(selectedTopic))
 }
