@@ -3,6 +3,21 @@ This is a very simple API i made that generates a random fact using AI and retur
 
 A Free version of this API is available [HERE](https://funfact.amirparsab9.arvanedge.ir/) *(currently not recommended for prod use)*
 
+## How To Use
+
+### Getting A Fact
+You can get a fact by sending a **GET** request to `/`
+
+There are also a few search params you can use:
+- `topic`: Use this to select a topic (example: Sports)
+- `language`: Use this to select a language (example: spanish)
+
+### List Languages
+You cna get a list of languages by sending a **GET** request to `/languages`
+
+### List Topics
+You cna get a list of topics by sending a **GET** request to `/topics`
+
 ## How To Deploy
 To deploy this app, you need an [ArvanCloud Account](https://panel.arvancloud.ir) and an [AvalAI Developer Account](https://chat.avalai.ir/platform/home).
 
