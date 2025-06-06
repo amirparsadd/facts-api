@@ -6,9 +6,11 @@ import { log } from "./logger";
 /**
  * Generates a random fact using AI
  * 
+ * @param {String | undefined} topic 
+ * 
  * @returns {Promise<String | null>}
  */
-export async function getRandomFact(){
+export async function getRandomFact(topic){
 	try {
 		const fact = await (await fetch(API_ENDPOINT + "v1/chat/completions", {
 			method: "POST",
@@ -25,7 +27,7 @@ export async function getRandomFact(){
 					},
 					{
 						role: "user",
-						content: `A fact about ${getRandomItem(topics)} in persian`
+						content: `A fact about ${topic || getRandomItem(topics)} in persian`
 					}
 				]
 			})
