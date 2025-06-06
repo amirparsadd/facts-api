@@ -6,7 +6,7 @@ import { log } from "./logger";
 /**
  * Generates a random fact using AI
  * 
- * @returns {String | null}
+ * @returns {Promise<String | null>}
  */
 export async function getRandomFact(){
 	try {
