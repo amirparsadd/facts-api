@@ -1,8 +1,6 @@
 # Facts API
 This is a very simple API i made that generates a random fact using AI and returns it to the user.
 
-*Currently this API only supports persian facts*
-
 A Free version of this API is available [HERE](https://funfact.amirparsab9.arvanedge.ir/) *(currently not recommended for prod use)*
 
 ## How To Deploy

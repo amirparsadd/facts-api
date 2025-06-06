@@ -1,3 +1,4 @@
+import { languages } from "../languages"
 import topics from "../topics"
 import { getRandomFact } from "../utils/fact"
 import HandlerError from "../utils/handler"
@@ -15,14 +16,14 @@ export default async function handleFacts(req){
     if(req.method !== "GET" || url.pathname !== "/") return null
 
     const selectedTopic = url.searchParams.get("topic") ?? undefined
-
-    if(!selectedTopic){
-        return new Response(await getRandomFact())
-    }
-
-    if(!topics.includes(selectedTopic)) {
+    if(selectedTopic && !topics.includes(selectedTopic)) {
         throw new HandlerError(400, "Invalid Topic! Topics Are Case Sensitive")
     }
 
-    return new Response(await getRandomFact(selectedTopic))
+    const selectedLanguage = url.searchParams.get("language") ?? undefined
+    if(selectedLanguage && !languages.includes(selectedLanguage)) {
+        throw new HandlerError(400, "Invalid Language! Languages Are Case Sensitive")
+    }
+
+    return new Response(await getRandomFact(selectedTopic, selectedLanguage))
 }

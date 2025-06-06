@@ -26,7 +26,7 @@ export const languages = [
   "thai",
   "gujarati",
   "kannada",
-  "persianFarsi",
+  "persian",
   "polish",
   "ukrainian",
   "romanian",

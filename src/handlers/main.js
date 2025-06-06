@@ -1,6 +1,7 @@
 import HandlerError from "../utils/handler";
 import handleCORS from "./cors";
 import handleFacts from "./fact";
+import handleLanguagesFetching from "./languages";
 import handleTopicsFetching from "./topics";
 
 /**
@@ -9,7 +10,7 @@ import handleTopicsFetching from "./topics";
  * @returns {Promise<Response>}
  */
 export default async function main(req) {
-    const handlers = [ handleCORS, handleFacts, handleTopicsFetching ]
+    const handlers = [ handleCORS, handleFacts, handleTopicsFetching, handleLanguagesFetching ]
 
     for (let i = 0; i < handlers.length; i++) {
         const handler = handlers[i];
