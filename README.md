@@ -13,10 +13,10 @@ There are also a few search params you can use:
 - `language`: Use this to select a language (example: spanish)
 
 ### List Languages
-You cna get a list of languages by sending a **GET** request to `/languages`
+You can get a list of languages by sending a **GET** request to `/languages`
 
 ### List Topics
-You cna get a list of topics by sending a **GET** request to `/topics`
+You can get a list of topics by sending a **GET** request to `/topics`
 
 ## How To Deploy
 To deploy this app, you need an [ArvanCloud Account](https://panel.arvancloud.ir) and an [AvalAI Developer Account](https://chat.avalai.ir/platform/home).
